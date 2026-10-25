@@ -1,0 +1,57 @@
+/* Soportech ICT · visual refresh · original brand palette */
+.sict-ui{--blue:#2454ff;--navy:#0b1530;--ink:#182744;--muted:#56647a;font-family:Inter,"Segoe UI",Arial,sans-serif;text-rendering:optimizeLegibility;background:#fff}
+.sict-ui .wrap{width:min(1200px,calc(100% - 64px))}
+.sict-ui .header{height:84px;backdrop-filter:blur(18px);box-shadow:0 8px 32px #10213d05}
+.sict-ui .nav{gap:22px}.sict-ui .nav a{font-size:13px}.sict-ui .btn{border-radius:12px;min-height:50px;padding:14px 23px;font-size:14px;box-shadow:0 6px 18px #2454ff16;transition:transform .18s,background .18s,box-shadow .18s}
+.sict-ui .btn:hover{box-shadow:0 10px 25px #2454ff30;transform:translateY(-2px)}.sict-ui .btn-outline{box-shadow:none}
+.sict-ui .hero#inicio{background:radial-gradient(ellipse at 80% 25%,#23478655,transparent 55%),linear-gradient(120deg,#0b1530,#101f42);padding-top:80px}
+.sict-ui .hero#inicio:after,.sict-ui .about:after{content:"";position:absolute;inset:0;background-image:linear-gradient(#9eb9ff08 1px,transparent 1px),linear-gradient(90deg,#9eb9ff08 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.sict-ui .hero-inner{grid-template-columns:1.06fr 1fr;gap:50px;padding-bottom:65px;position:relative;z-index:1}
+.sict-ui h1{font-size:clamp(38px,4vw,59px);line-height:1.09;letter-spacing:-2px;max-width:720px}
+.sict-ui .hero-copy{font-size:17px;line-height:1.75;max-width:550px}
+.sict-ui .eyebrow{letter-spacing:1.6px;font-size:11px;font-weight:750}
+.sict-ui .hero-note{font-size:12px;line-height:1.65;max-width:470px}
+.sict-ui .support-visual{margin:0;position:relative;isolation:isolate}
+.sict-ui .support-visual img{display:block;width:100%;height:auto;aspect-ratio:4/3;border-radius:24px;border:1px solid #7ca6f53b;box-shadow:0 28px 65px #0003}
+.sict-ui .visual-label{position:absolute;left:22px;right:22px;bottom:18px;border:1px solid #ffffff26;background:#10203bdd;backdrop-filter:blur(16px);padding:14px 18px;border-radius:14px;display:flex;align-items:center;gap:13px;color:white;font-size:12px;line-height:1.5;box-shadow:0 10px 24px #0002}
+.sict-ui .visual-label b{display:block;font-size:14px;color:white}.sict-ui .visual-label small{color:#bccce5;font-size:11px}.sict-ui .visual-label .v-icon{height:38px;width:38px;border-radius:10px;background:#2454ff;display:grid;place-items:center;flex:none}
+.sict-ui .hero-bottom{position:relative;z-index:1;gap:28px;padding:25px 0 29px}.sict-ui .hero-bottom div{background:#ffffff04;border:1px solid #8cc9ff20;border-radius:12px;padding:15px}.sict-ui .hero-bottom b{border-radius:7px;background:#2454ff25;padding:8px;color:#a8c6ff}
+.sict-ui .section{padding:82px 0}.sict-ui h2{font-size:clamp(29px,3vw,41px);letter-spacing:-1.25px;line-height:1.16}
+.sict-ui #diagnostico-inicial{background:linear-gradient(180deg,#f5f8ff,#fff);border-bottom:1px solid #e6ecf6}
+.sict-ui .mode{border-radius:22px;padding:35px;background:#fff;box-shadow:0 16px 44px #17294c08;overflow:hidden}
+.sict-ui .mode:before{content:"";display:block;width:46px;height:5px;border-radius:9px;background:var(--blue);margin-bottom:24px}
+.sict-ui .mode.dark{background:radial-gradient(circle at 100% 0,#2454ff3b,transparent 58%),#0b1530;border-color:#263757}
+.sict-ui .mode.dark:before{background:#8cc9ff}.sict-ui .mode .tag{background:#f2f6ff;border-color:#d9e4fa;font-size:11px}.sict-ui .mode.dark .tag{background:#ffffff08;border-color:#8cc9ff35}
+.sict-ui .mode .fineprint{line-height:1.7}.sict-ui .mode h3{font-size:26px}
+.sict-ui .services{background:#f3f6fb}.sict-ui .service-grid{gap:18px}.sict-ui .service{border-radius:18px;border-color:#dfe7f3;padding:28px 24px;box-shadow:0 7px 18px #142b4c03}
+.sict-ui .service:hover{box-shadow:0 18px 38px #17376b12}.sict-ui .service-icon{height:49px;width:49px;background:linear-gradient(145deg,#e5edff,#f4f7ff);border:1px solid #dce6ff;border-radius:14px;margin-bottom:23px}
+.sict-ui .service h3{font-size:18px}.sict-ui .service a{line-height:1.7}.sict-ui .service.web{border-top:3px solid #2454ff}
+.sict-ui .helpdesk{background:#0b1530;position:relative;overflow:hidden;color:white}
+.sict-ui .helpdesk:before{content:"";position:absolute;width:650px;height:650px;border-radius:50%;right:-200px;top:-350px;background:radial-gradient(circle,#2454ff55,transparent 65%);pointer-events:none}
+.sict-ui .helpdesk-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;position:relative}
+.sict-ui .helpdesk .eyebrow{color:#a4bdff}.sict-ui .helpdesk p{color:#bdcce2;font-size:15px;line-height:1.8}.sict-ui .helpdesk .btn{margin-top:15px}
+.sict-ui .desk-board{padding:25px;border:1px solid #8cc9ff33;border-radius:22px;background:linear-gradient(150deg,#1b3054,#111e38);box-shadow:0 25px 65px #0003}
+.sict-ui .desk-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:23px;padding-bottom:18px;border-bottom:1px solid #8cc9ff24;font-size:14px}
+.sict-ui .desk-heading span{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#adc7f4}
+.sict-ui .desk-row{display:flex;align-items:center;gap:16px;background:#ffffff05;border:1px solid #8cc9ff1c;border-radius:13px;padding:17px;margin-top:12px}
+.sict-ui .desk-row>span{display:grid;place-items:center;width:37px;height:37px;border-radius:10px;color:#a9c7ff;background:#2454ff28;font-family:monospace;flex:none}
+.sict-ui .desk-row b{display:block;font-size:14px}.sict-ui .desk-row small{display:block;font-size:12px;color:#b0bfd6;margin-top:4px;line-height:1.5}
+.sict-ui .desk-note{font-size:11px!important;margin:18px 0 0;line-height:1.6!important}
+.sict-ui .about{position:relative;overflow:hidden;background:radial-gradient(ellipse at 5% 100%,#2454ff30,transparent 60%),#0b1530}.sict-ui .about-grid{position:relative;z-index:1}
+.sict-ui .about-item{padding:27px 0}.sict-ui .about-item .number{background:#2454ff22;border-radius:8px;width:34px;height:34px;display:grid;place-items:center;flex:none;padding:0}
+.sict-ui .process{background:#f7f9fd}.sict-ui .steps{gap:22px}.sict-ui .steps article{background:white;padding:25px;border:1px solid #e0e7f2;border-radius:16px}
+.sict-ui .faq details{border:1px solid #e0e7f2;border-radius:12px;margin-bottom:10px;padding:0 19px;background:#fff}.sict-ui .faq summary{padding-right:28px;font-size:15px}.sict-ui .faq details p{line-height:1.75}
+.sict-ui .cta-band{background:radial-gradient(circle at 80% 20%,#5481ff80,transparent 45%),#2454ff}
+.sict-ui .contact{background:linear-gradient(135deg,#edf3ff,#f7f9fc)}.sict-ui .form-card{box-shadow:0 20px 55px #1535650b;border-radius:22px;padding:35px}.sict-ui input,.sict-ui select,.sict-ui textarea{border-radius:9px}
+.sict-ui .contact-item>span{font-size:10px;letter-spacing:1.3px}.sict-ui .contact-item p{font-size:14px;color:#56647a}.sict-ui .footer{background:#fbfcfe}
+.sict-ui .detail-header{background:#ffffffed;backdrop-filter:blur(16px);position:sticky;top:0;z-index:20;box-shadow:0 4px 25px #0b153008}.sict-ui .detail-header strong{color:#2454ff;letter-spacing:-.4px}
+.sict-ui .detail-hero{background:radial-gradient(ellipse at 80% 30%,#214a8850,transparent 60%),#0b1530;padding:72px 0}
+.sict-ui .detail-hero>.wrap{display:grid;grid-template-columns:1.12fr 1fr;gap:55px;align-items:center}
+.sict-ui .detail-hero h1{font-size:clamp(35px,3.7vw,53px)}.sict-ui .detail-hero p{line-height:1.8;font-size:16px;max-width:630px}
+.sict-ui .detail-hero .visual-label{max-width:none}.sict-ui .detail-text{max-width:860px}.sict-ui .detail-text h3{margin-top:32px;padding-left:16px;border-left:3px solid #2454ff}.sict-ui .detail-text>p{font-size:16px;line-height:1.85}
+.sict-ui .coverage{background:linear-gradient(135deg,#edf3ff,#f7f9ff)}.sict-ui .detail-faq details{border-radius:12px;border:1px solid #dce5f3;background:white;padding:0 20px;margin-bottom:10px}.sict-ui .detail-faq details p{padding-bottom:20px}
+@media(max-width:1100px) and (min-width:781px){.sict-ui .nav{gap:13px}.sict-ui .nav a{font-size:12px}.sict-ui .nav .btn{padding:12px 14px}.sict-ui .header .logo{width:165px}.sict-ui .hero-inner{gap:30px}.sict-ui .wrap{width:calc(100% - 48px)}}
+@media(max-width:900px){.sict-ui .helpdesk-grid{gap:35px}.sict-ui .detail-hero>.wrap{gap:30px}.sict-ui .detail-hero h1{font-size:37px}}
+@media(max-width:780px){.sict-ui .wrap{width:calc(100% - 36px)}.sict-ui .header{height:76px}.sict-ui .hero#inicio{padding-top:47px}.sict-ui .hero-inner,.sict-ui .helpdesk-grid,.sict-ui .detail-hero>.wrap{grid-template-columns:1fr;gap:35px}.sict-ui .hero-inner{padding-bottom:30px}.sict-ui h1{font-size:clamp(37px,8vw,52px);letter-spacing:-1.5px}.sict-ui .support-visual{width:100%;max-width:540px;margin:auto}.sict-ui .hero-bottom{gap:10px}.sict-ui .hero-bottom div{padding:12px}.sict-ui .section{padding:58px 0}.sict-ui .mode{padding:27px}.sict-ui .steps{gap:14px}.sict-ui .steps article{padding:22px}.sict-ui .form-card{padding:25px}.sict-ui .detail-hero{padding:45px 0}.sict-ui .detail-hero h1{font-size:clamp(35px,8vw,48px)}.sict-ui .detail-header .wrap{gap:12px;flex-wrap:wrap}.sict-ui .detail-header nav{font-size:12px}.sict-ui .nav{gap:12px}.sict-ui .nav a{font-size:15px}.sict-ui .desk-board{padding:20px}}
+@media(max-width:480px){.sict-ui .hero .actions{flex-direction:column}.sict-ui .hero .actions .btn{width:100%;min-width:0}.sict-ui .visual-label{left:12px;right:12px;bottom:12px;padding:11px 12px}.sict-ui .visual-label b{font-size:12px}.sict-ui .visual-label small{font-size:10px}.sict-ui .service-grid{grid-template-columns:1fr}.sict-ui .desk-heading{gap:12px}.sict-ui .detail-hero .actions{flex-direction:column}.sict-ui .detail-hero .actions a{width:100%}}
+@media(prefers-reduced-motion:reduce){.sict-ui *{scroll-behavior:auto!important;transition:none!important}}
