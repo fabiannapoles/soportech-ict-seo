@@ -2,11 +2,13 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import WhatsApp from '../components/WhatsApp.astro';
+import IconSprite from '../components/IconSprite.astro';
 import { site, schema, routes, type Silo } from '../lib/site';
 interface Props { title: string; description: string; silo: Silo }
 const { title, description, silo } = Astro.props;
 const canonical = new URL(routes[silo],site).href;
 const data = JSON.stringify(schema(silo,description)).replace(/</g,'\\u003c');
+const choices = silo==='b2b' ? ['Soporte técnico','Póliza de soporte','Redes y conectividad','Servidores y respaldos','Telefonía VoIP y CCTV','Equipos y suministros','Asesoría y gestión TI','Creación de páginas web','Desarrollo de apps a la medida','Otro proyecto'] : silo==='b2c' ? ['Reparación de computadora o laptop','Soporte remoto','Optimización de computadora','Mantenimiento preventivo','Formateo e instalación','Eliminación de virus','WiFi doméstico','Respaldo de archivos','Otro servicio para el hogar'] : ['Orientación para empresas','Orientación para el hogar'];
 ---
 <!doctype html>
 <html lang="es-MX">
@@ -26,6 +28,7 @@ const data = JSON.stringify(schema(silo,description)).replace(/</g,'\\u003c');
     <script type="application/ld+json" set:html={data} />
   </head>
   <body class="sict-ui">
+    <IconSprite />
     <a class="skip" href="#contenido">Saltar al contenido</a>
     <header class="header"><div class="wrap header-inner">
       <a class="logo" href="/" aria-label="Soportech ICT — inicio"><img src="/assets/logo.svg" width="194" height="54" alt="Soportech ICT" /></a>
@@ -34,31 +37,39 @@ const data = JSON.stringify(schema(silo,description)).replace(/</g,'\\u003c');
     <main id="contenido" tabindex="-1"><slot /></main>
     <section class="contact" id="contacto" aria-labelledby="contact-title"><div class="wrap contact-grid"><div class="contact-copy">
       <p class="eyebrow">Hablemos de tu caso</p>
-      <h2 id="contact-title">{silo==='b2b'?'Define el siguiente paso para tu operación.':silo==='b2c'?'Cuéntanos qué le pasa a tu computadora.':'Encuentra la atención que necesitas.'}</h2>
+      <h2 id="contact-title">Hablemos de<br />tu necesidad.</h2>
       <p>Atención remota y visitas coordinadas en Zapopan, Guadalajara y la ZMG. Confirmamos disponibilidad, alcance y cotización antes de comenzar.</p>
       <div class="contact-item"><span>Llámanos</span><a href="tel:+523332238265">33 3223 8265</a></div>
       <div class="contact-item"><span>Escríbenos</span><a href="mailto:contacto@soportechict.com">contacto@soportechict.com</a></div>
+      <div class="contact-item"><span>Zona de servicio</span><address>Nuestra cobertura presencial principal es Guadalajara y la Zona Metropolitana: Zapopan, San Pedro Tlaquepaque, Tonalá, Tlajomulco de Zúñiga y El Salto.</address></div>
+      <p class="note">¿Estás en otra localidad? Consulta disponibilidad. Coordinamos cada visita según el servicio, alcance y traslado. También ofrecemos soporte remoto fuera de la ZMG cuando la naturaleza del problema permite atenderlo a distancia. Cualquier costo de traslado se informa antes de agendar.</p>
       <p class="note">Lunes a viernes, de 8:00 a 18:00.{silo==='b2b' && ' Horario de pólizas según contrato.'}</p>
       <WhatsApp silo={silo} placement="contacto" />
     </div><div class="form-card"><h3>Cuéntanos qué necesitas</h3><p class="note">Prepara un correo para el equipo. Podrás revisarlo antes de enviarlo desde tu aplicación de correo.</p>
       <form id="contact-form" data-silo={silo}>
         <div class="field"><label for="name">Nombre</label><input id="name" name="name" autocomplete="name" required maxlength="120" /></div>
         {silo==='b2b' && <div class="field"><label for="company">Empresa (opcional)</label><input id="company" name="company" autocomplete="organization" maxlength="160" /></div>}
+        <div class="field"><label for="service">Servicio de interés</label><select name="service" id="service" required><option value="">Selecciona un servicio</option>{choices.map(choice=><option value={choice}>{choice}</option>)}</select></div>
         <div class="field"><label for="message">¿Qué necesitas?</label><textarea id="message" name="message" required maxlength="2500"></textarea></div>
-        <button class="btn" type="submit">Preparar correo</button><p class="note mt-4" id="form-status" role="status">El sitio no almacena estos datos. El envío se confirma en tu aplicación de correo.</p>
+        <button class="btn" type="submit" disabled>Preparar correo</button><p class="note mt-4" id="form-status" role="status">El sitio no almacena estos datos. El envío se confirma en tu aplicación de correo.</p>
         <noscript><p>Puedes escribir directamente a <a href="mailto:contacto@soportechict.com,fnapoles@soportechict.com">nuestros correos</a> o contactarnos por WhatsApp.</p></noscript>
       </form>
     </div></div></section>
     <footer class="footer"><div class="wrap"><div class="footer-top"><a class="logo" href="/" aria-label="Soportech ICT — volver al inicio"><img src="/assets/logo.svg" alt="Soportech ICT" width="194" height="54" loading="lazy" /></a><p>{silo==='b2b'?'Soporte TI, infraestructura y desarrollo.':silo==='b2c'?'Atención para tu computadora y laptop.':'Atención que se adapta a tu día a día.'}</p><nav class="footer-links" aria-label="Contacto y redes sociales"><a href="#contacto">Contacto</a><a href="https://www.facebook.com/profile.php?id=61594872279617" rel="me">Facebook</a><a href="https://www.instagram.com/soportechict.gdl/" rel="me">Instagram</a></nav></div><div class="footer-bottom"><span>© 2026 SOPORTECH ICT.</span><span>Guadalajara, Jalisco · México</span></div><p class="image-note">Imágenes conceptuales generadas con IA para ilustrar los servicios; no corresponden a personal ni instalaciones de Soportech.</p></div></footer>
     <script>
       const form=document.querySelector<HTMLFormElement>('#contact-form');
+      form?.querySelector<HTMLButtonElement>('button[type="submit"]')?.removeAttribute('disabled');
+      document.querySelectorAll<HTMLAnchorElement>('[data-service]').forEach(link=>link.addEventListener('click',()=>{
+        const field=document.querySelector<HTMLSelectElement>('#service');
+        if(field&&Array.from(field.options).some(option=>option.value===link.dataset.service))field.value=link.dataset.service!;
+      }));
       form?.addEventListener('submit',event=>{
         event.preventDefault();
         if(!form.reportValidity())return;
         const data=new FormData(form);
         const name=String(data.get('name')||'').trim(),message=String(data.get('message')||'').trim();
         if(!name||!message){document.querySelector('#form-status')!.textContent='Escribe tu nombre y el detalle de tu solicitud.';return;}
-        const body=`Hola, equipo de Soportech ICT.\nNombre: ${name}\n${data.get('company')?'Empresa: '+data.get('company')+'\n':''}Origen: web / ${form.dataset.silo}\n\n${message}`;
+        const body=`Hola, equipo de Soportech ICT.\nNombre: ${name}\n${data.get('company')?'Empresa: '+data.get('company')+'\n':''}Servicio: ${data.get('service')}\nOrigen: web / ${form.dataset.silo}\n\n${message}`;
         document.querySelector('#form-status')!.textContent='Tu correo está preparado. Revisa y envíalo desde tu aplicación de correo; también puedes contactarnos por WhatsApp.';
         location.href=`mailto:contacto@soportechict.com,fnapoles@soportechict.com?subject=${encodeURIComponent('Solicitud de servicio — Soportech ICT')}&body=${encodeURIComponent(body)}`;
       });

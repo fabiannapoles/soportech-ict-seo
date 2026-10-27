@@ -21,6 +21,10 @@ El vocabulario oficial de Schema.org no define `ComputerRepair` como tipo. Se co
 
 La navegación del silo solo enlaza a sus secciones y al inicio mediante el logo. No hay enlaces directos entre B2B y B2C. Los planes y sus condiciones comerciales publicadas se conservan en B2B; la calculadora funciona progresivamente sobre precios ya renderizados para 5 equipos.
 
+Se conserva la composición visual publicada, sus estilos, fotografías, logo, formulario de correo y el catálogo de precios para particulares (IVA incluido) con sus condiciones. El catálogo del hogar excluye referencias a servicios del otro silo.
+
+Los bloques originales se distribuyen por intención: Inicio conserva portada fotográfica y tarjetas de acceso; Empresas conserva las ocho tarjetas de servicios con iconos y efectos hover, mesa de ayuda, orientación inicial, modalidades, calculadora con botones rápidos, proceso, presentación de la empresa, preguntas frecuentes y banda de contacto; Hogar conserva precios, condiciones y orientación, con tarjetas del mismo sistema visual. Los enlaces de cada tarjeta seleccionan el servicio correspondiente en el formulario. Se respetan preferencias de movimiento reducido.
+
 ## WhatsApp y atribución
 
 `src/lib/site.ts` centraliza el número y los textos. Cada enlace lleva `silo` y `ubicacion` dentro del mensaje prellenado. El visitante puede modificarlo; no equivale a una conversión confirmada. Se emite el evento de navegador `soportech:conversion` al hacer clic, con canal, silo, ubicación y ruta. No se carga un proveedor de analítica sin configurar uno. Los UTM de campañas entrantes no se almacenan y no se presume que `wa.me` mida UTM.
