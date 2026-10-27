@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import WhatsApp from '../components/WhatsApp.astro';
+import { site, schema, routes, type Silo } from '../lib/site';
+interface Props { title: string; description: string; silo: Silo }
+const { title, description, silo } = Astro.props;
+const canonical = new URL(routes[silo],site).href;
+const data = JSON.stringify(schema(silo,description)).replace(/</g,'\\u003c');
+---
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0b1530" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" /><meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content={title} /><meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} /><meta property="og:site_name" content="Soportech ICT" />
+    <meta property="og:image" content={site+'/assets/'+(silo==='b2c'?'soporte-hogar.webp':'soporte-empresas.webp')} />
+    <meta property="og:image:alt" content="Imagen conceptual de asistencia técnica de Soportech ICT" />
+    <script type="application/ld+json" set:html={data} />
+  </head>
+  <body class="sict-ui">
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="header"><div class="wrap header-inner">
+      <a class="logo" href="/" aria-label="Soportech ICT — inicio"><img src="/assets/logo.svg" width="194" height="54" alt="Soportech ICT" /></a>
+      <Navigation silo={silo} />
+    </div></header>
+    <main id="contenido" tabindex="-1"><slot /></main>
+    <section class="contact" id="contacto" aria-labelledby="contact-title"><div class="wrap contact-grid"><div class="contact-copy">
+      <p class="eyebrow">Hablemos de tu caso</p>
+      <h2 id="contact-title">{silo==='b2b'?'Define el siguiente paso para tu operación.':silo==='b2c'?'Cuéntanos qué le pasa a tu computadora.':'Encuentra la atención que necesitas.'}</h2>
+      <p>Atención remota y visitas coordinadas en Zapopan, Guadalajara y la ZMG. Confirmamos disponibilidad, alcance y cotización antes de comenzar.</p>
+      <div class="contact-item"><span>Llámanos</span><a href="tel:+523332238265">33 3223 8265</a></div>
+      <div class="contact-item"><span>Escríbenos</span><a href="mailto:contacto@soportechict.com">contacto@soportechict.com</a></div>
+      <p class="note">Lunes a viernes, de 8:00 a 18:00.{silo==='b2b' && ' Horario de pólizas según contrato.'}</p>
+      <WhatsApp silo={silo} placement="contacto" />
+    </div><div class="form-card"><h3>Cuéntanos qué necesitas</h3><p class="note">Prepara un correo para el equipo. Podrás revisarlo antes de enviarlo desde tu aplicación de correo.</p>
+      <form id="contact-form" data-silo={silo}>
+        <div class="field"><label for="name">Nombre</label><input id="name" name="name" autocomplete="name" required maxlength="120" /></div>
+        {silo==='b2b' && <div class="field"><label for="company">Empresa (opcional)</label><input id="company" name="company" autocomplete="organization" maxlength="160" /></div>}
+        <div class="field"><label for="message">¿Qué necesitas?</label><textarea id="message" name="message" required maxlength="2500"></textarea></div>
+        <button class="btn" type="submit">Preparar correo</button><p class="note mt-4" id="form-status" role="status">El sitio no almacena estos datos. El envío se confirma en tu aplicación de correo.</p>
+        <noscript><p>Puedes escribir directamente a <a href="mailto:contacto@soportechict.com,fnapoles@soportechict.com">nuestros correos</a> o contactarnos por WhatsApp.</p></noscript>
+      </form>
+    </div></div></section>
+    <footer class="footer"><div class="wrap"><div class="footer-top"><a class="logo" href="/" aria-label="Soportech ICT — volver al inicio"><img src="/assets/logo.svg" alt="Soportech ICT" width="194" height="54" loading="lazy" /></a><p>{silo==='b2b'?'Soporte TI, infraestructura y desarrollo.':silo==='b2c'?'Atención para tu computadora y laptop.':'Atención que se adapta a tu día a día.'}</p><nav class="footer-links" aria-label="Contacto y redes sociales"><a href="#contacto">Contacto</a><a href="https://www.facebook.com/profile.php?id=61594872279617" rel="me">Facebook</a><a href="https://www.instagram.com/soportechict.gdl/" rel="me">Instagram</a></nav></div><div class="footer-bottom"><span>© 2026 SOPORTECH ICT.</span><span>Guadalajara, Jalisco · México</span></div><p class="image-note">Imágenes conceptuales generadas con IA para ilustrar los servicios; no corresponden a personal ni instalaciones de Soportech.</p></div></footer>
+    <script>
+      const form=document.querySelector<HTMLFormElement>('#contact-form');
+      form?.addEventListener('submit',event=>{
+        event.preventDefault();
+        if(!form.reportValidity())return;
+        const data=new FormData(form);
+        const name=String(data.get('name')||'').trim(),message=String(data.get('message')||'').trim();
+        if(!name||!message){document.querySelector('#form-status')!.textContent='Escribe tu nombre y el detalle de tu solicitud.';return;}
+        const body=`Hola, equipo de Soportech ICT.\nNombre: ${name}\n${data.get('company')?'Empresa: '+data.get('company')+'\n':''}Origen: web / ${form.dataset.silo}\n\n${message}`;
+        document.querySelector('#form-status')!.textContent='Tu correo está preparado. Revisa y envíalo desde tu aplicación de correo; también puedes contactarnos por WhatsApp.';
+        location.href=`mailto:contacto@soportechict.com,fnapoles@soportechict.com?subject=${encodeURIComponent('Solicitud de servicio — Soportech ICT')}&body=${encodeURIComponent(body)}`;
+      });
+      // Optional analytics hook. No external tracker or cookies are loaded.
+      document.addEventListener('click',event=>{
+        const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('[data-conversion="whatsapp"]') : null;
+        if(!link) return;
+        window.dispatchEvent(new CustomEvent('soportech:conversion',{detail:{channel:'whatsapp',silo:link.dataset.silo,placement:link.dataset.placement,page:location.pathname}}));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+---
+import { whatsapp, type Silo } from '../lib/site';
+interface Props { silo: Silo; placement: string; light?: boolean }
+const { silo, placement, light = false } = Astro.props;
+---
+<a class:list={['btn',{'btn-light':light}]} href={whatsapp(silo,placement)} data-conversion="whatsapp" data-silo={silo} data-placement={placement}><slot>Consultar por WhatsApp</slot></a>
