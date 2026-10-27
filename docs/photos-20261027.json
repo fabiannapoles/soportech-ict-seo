@@ -1,0 +1,21 @@
+{
+  "generator": "Built-in image_gen",
+  "date": "2026-10-27",
+  "photos": [
+    {
+      "path": "inicio-atencion-tecnica.webp",
+      "prompt": "Use case: photorealistic-natural. Create a realistic editorial photograph for the homepage of a technical support company in Guadalajara, Mexico. Landscape 3:2. A tidy contemporary independent computer service workspace, a technician in a plain navy shirt seen in three-quarter profile calmly inspecting an open laptop on a light wood desk, tools neatly placed, daylight through a window, approachable authentic Mexican small business setting. Natural skin and material texture, believable hands and electronics, professional documentary photography. No text, no logos, no watermark, no futuristic CGI. This is a conceptual service photograph, not a portrait of actual company employees.",
+      "format": "WebP, 1536×1024, quality 78"
+    },
+    {
+      "path": "hogar-reparacion-laptop.webp",
+      "prompt": "Use case: photorealistic-natural. Landscape 3:2 editorial photograph for residential computer repair in Mexico. Close documentary view of a female technician's hands using a precision screwdriver on an unplugged laptop with its back cover removed on a clean dining table in a warm lived-in Mexican home. A woman customer sits nearby softly out of focus, reassuring everyday atmosphere, daylight, subtle navy blue details, physically plausible laptop components and tools. Composition centered on repair, visibly residential, not an office. No text, logos, watermark, server racks or CGI.",
+      "format": "WebP, 1536×1024, quality 78"
+    },
+    {
+      "path": "empresas-soporte-oficina.webp",
+      "prompt": "Use case: photorealistic-natural. Landscape 3:2 realistic editorial photograph for business IT support in Guadalajara Mexico. A male IT specialist in a plain navy polo and a woman office manager reviewing a laptop and a small organized network cabinet in a bright modest contemporary business office. Three-quarter wide composition, natural candid interaction, tidy ethernet patch cables, desks softly blurred behind them, daylight, authentic skin and materials, understated professional blue accents. Distinct office environment, not a home or repair bench. No text, branding, watermark, floating graphics or CGI.",
+      "format": "WebP, 1536×1024, quality 78"
+    }
+  ]
+}
