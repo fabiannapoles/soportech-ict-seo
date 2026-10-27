@@ -23,7 +23,7 @@ const choices = silo==='b2b' ? ['Soporte técnico','Póliza de soporte','Redes y
     <meta property="og:type" content="website" /><meta property="og:locale" content="es_MX" />
     <meta property="og:title" content={title} /><meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} /><meta property="og:site_name" content="Soportech ICT" />
-    <meta property="og:image" content={site+'/assets/'+(silo==='b2c'?'soporte-hogar.webp':'soporte-empresas.webp')} />
+    <meta property="og:image" content={site+'/assets/'+(silo==='b2c'?'hogar-reparacion-laptop.webp':silo==='b2b'?'empresas-soporte-oficina.webp':'inicio-atencion-tecnica.webp')} />
     <meta property="og:image:alt" content="Imagen conceptual de asistencia técnica de Soportech ICT" />
     <script type="application/ld+json" set:html={data} />
   </head>
