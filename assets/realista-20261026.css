@@ -1,0 +1,50 @@
+/* Soportech ICT: fotografía editorial, identidad original conservada. */
+.sict-ui .hero#inicio{background:radial-gradient(ellipse at 100% 0,#2454ff28,transparent 52%),#0b1530;padding-top:72px}
+.sict-ui .hero#inicio:after,.sict-ui .about:after{display:none}
+.sict-ui .hero-inner{grid-template-columns:1fr 1.05fr;gap:64px;align-items:center;padding-bottom:62px}
+.sict-ui h1{font-size:clamp(40px,4.2vw,60px);line-height:1.08;letter-spacing:-2.1px}
+.sict-ui .hero-copy{font-size:16px;line-height:1.85;max-width:510px}
+.sict-ui .hero-text .eyebrow{color:#a6bfff;margin-bottom:26px}
+.sict-ui .hero .actions{gap:12px;flex-wrap:wrap}
+.sict-ui .btn{border-radius:9px;box-shadow:none;font-weight:650}
+.sict-ui .support-visual{align-self:stretch;min-width:0;display:flex;align-items:center}
+.sict-ui .support-visual>img{aspect-ratio:1.08;height:100%;max-height:590px;min-height:450px;object-fit:cover;object-position:50% center;border:0;border-radius:20px;box-shadow:none}
+.sict-ui .visual-label{left:0;right:0;bottom:0;border:0;background:linear-gradient(transparent,#0b1530ee);backdrop-filter:none;border-radius:0 0 20px 20px;box-shadow:none;padding:55px 24px 24px}
+.sict-ui .hero-bottom{border-color:#ffffff20;gap:25px;padding:25px 0}
+.sict-ui .hero-bottom>div{border:0;background:transparent;border-radius:0;padding:8px 0}
+.sict-ui .hero-bottom b{background:transparent;padding:0;color:#92b2ff}
+.sict-ui .section{padding:88px 0}
+.sict-ui .audience-section{background:#fff}
+.sict-ui .audience-heading{display:flex;align-items:end;justify-content:space-between;gap:42px;margin-bottom:34px}
+.sict-ui .audience-heading h2{max-width:670px;margin-bottom:0}
+.sict-ui .audience-heading>p{max-width:300px;color:#56647a;font-size:15px;line-height:1.8;margin-bottom:0}
+.sict-ui .audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.sict-ui .audience-card{border:1px solid #e2e8f3;border-radius:18px;overflow:hidden;background:#f7f9fd}
+.sict-ui .audience-card>img{display:block;width:100%;aspect-ratio:1.8;object-fit:cover}
+.sict-ui .audience-content{padding:32px}
+.sict-ui .audience-content .eyebrow{color:#2454ff;margin:0 0 15px;font-size:10px}
+.sict-ui .audience-content h3{font-size:29px;line-height:1.2;letter-spacing:-.8px;margin:0 0 18px;color:#0b1530}
+.sict-ui .audience-content>p:not(.eyebrow){color:#56647a;line-height:1.8;font-size:15px;margin-bottom:24px}
+.sict-ui .audience-link{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #dbe3f1;padding-top:21px;color:#2454ff;font-weight:700;font-size:14px;text-decoration:none}
+.sict-ui .audience-link:hover{text-decoration:underline;text-underline-offset:4px}
+.sict-ui .audience-link span{font-size:22px;line-height:1}
+.sict-ui .service{box-shadow:none;border-radius:14px;transition:transform .2s,box-shadow .2s}
+.sict-ui .service:hover{transform:translateY(-3px);box-shadow:0 12px 30px #0b15300c}
+.sict-ui .helpdesk{background:#0b1530}
+.sict-ui .helpdesk:before{display:none}
+.sict-ui .helpdesk-grid{grid-template-columns:1fr 1.1fr;gap:70px}
+.sict-ui .desk-board{padding:0 25px 25px;background:#13213e;border-color:#ffffff20;box-shadow:none;overflow:hidden;border-radius:18px}
+.sict-ui .desk-photo{display:block;width:calc(100% + 50px);max-width:none;margin:0 -25px 24px;height:235px;object-fit:cover;object-position:50% 38%}
+.sict-ui .desk-heading{gap:15px;flex-wrap:wrap}
+.sict-ui .desk-row{padding:14px;border-radius:10px;background:transparent}
+.sict-ui .detail-hero{padding:65px 0;background:#0b1530}
+.sict-ui .detail-hero>.wrap{grid-template-columns:1fr 1fr;gap:55px}
+.sict-ui .detail-hero h1{font-size:clamp(35px,3.7vw,51px);line-height:1.12}
+.sict-ui .detail-header .logo{width:178px;display:block;height:auto;flex:none}
+.sict-ui .detail-header .logo>svg{width:100%;height:auto;display:block}
+.sict-ui .detail-header nav{font-size:14px;line-height:1.8}
+.sict-ui .image-disclosure{font-size:10px;line-height:1.6;opacity:.75;max-width:1200px;width:calc(100% - 64px);margin:22px auto 0}
+@media(max-width:1000px){.sict-ui .hero-inner,.sict-ui .detail-hero>.wrap{gap:32px}.sict-ui .support-visual>img{min-height:430px}.sict-ui .audience-content{padding:25px}.sict-ui .audience-heading{align-items:start}.sict-ui .helpdesk-grid{gap:38px}}
+@media(max-width:780px){.sict-ui .hero#inicio{padding-top:42px}.sict-ui .hero-inner,.sict-ui .detail-hero>.wrap,.sict-ui .helpdesk-grid{grid-template-columns:1fr;gap:32px}.sict-ui h1{font-size:clamp(39px,8vw,53px);letter-spacing:-1.5px}.sict-ui .hero-text .eyebrow{margin-bottom:20px}.sict-ui .hero-copy{font-size:15px}.sict-ui .support-visual{max-width:none}.sict-ui .support-visual>img{aspect-ratio:1.25;height:auto;min-height:0;max-height:none;border-radius:15px}.sict-ui .visual-label{border-radius:0 0 15px 15px;padding:45px 18px 20px}.sict-ui .hero-bottom{gap:10px;padding-top:8px}.sict-ui .section{padding:60px 0}.sict-ui .audience-heading{display:block}.sict-ui .audience-heading>p{max-width:none;margin-top:20px}.sict-ui .audience-grid{gap:20px}.sict-ui .audience-content h3{font-size:25px}.sict-ui .detail-hero{padding:43px 0}.sict-ui .detail-header .logo{width:155px}.sict-ui .image-disclosure{width:calc(100% - 36px)}.sict-ui .desk-photo{height:210px}}
+@media(max-width:580px){.sict-ui .audience-grid{grid-template-columns:1fr}.sict-ui .audience-content{padding:26px}.sict-ui .audience-card>img{aspect-ratio:1.6}.sict-ui .audience-heading h2{font-size:30px}.sict-ui .detail-header .wrap{gap:12px}.sict-ui .detail-header nav{width:100%;font-size:13px}.sict-ui .detail-hero h1{font-size:36px}.sict-ui .desk-heading span{font-size:9px}.sict-ui .desk-photo{height:195px}}
+@media(prefers-reduced-motion:reduce){.sict-ui .service:hover{transform:none}}
