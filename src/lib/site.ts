@@ -12,7 +12,7 @@ export function schema(silo: Silo, description: string) {
     '@id': `${site}/#business`, name:'Soportech ICT', url:site+'/',
     telephone:'+523332238265',email:'contacto@soportechict.com',
     logo:site+'/assets/logo.svg',
-    areaServed:[{'@type':'City',name:'Zapopan'},{'@type':'City',name:'Guadalajara'},{'@type':'Place',name:'Zona Metropolitana de Guadalajara'}],
+    areaServed:[{'@type':'City',name:'Zapopan'},{'@type':'City',name:'Guadalajara'},{'@type':'City',name:'San Pedro Tlaquepaque'},{'@type':'City',name:'Tonalá'},{'@type':'City',name:'Tlajomulco de Zúñiga'},{'@type':'City',name:'El Salto'},{'@type':'Place',name:'Zona Metropolitana de Guadalajara'}],
     sameAs:['https://www.facebook.com/profile.php?id=61594872279617','https://www.instagram.com/soportechict.gdl/'],
   };
   const service = {
