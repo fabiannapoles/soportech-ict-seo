@@ -1,0 +1,11 @@
+---
+export function getStaticPaths() {
+  return [
+    {params:{legacy:'particulares'},props:{target:'/reparacion-computadoras/'}},
+    {params:{legacy:'soporte-ti-empresas-zmg'},props:{target:'/empresas/soporte-tecnico/'}},
+    {params:{legacy:'soporte-tecnico-empresas-guadalajara'},props:{target:'/empresas/soporte-tecnico/'}},
+  ];
+}
+const { target } = Astro.props;
+---
+<!doctype html><html lang="es-MX"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Servicio actualizado | Soportech ICT</title><meta http-equiv="refresh" content={'0;url='+target} /><link rel="canonical" href={'https://soportechict.com'+target} /></head><body><main><h1>Este servicio tiene una nueva página.</h1><a href={target}>Continuar al servicio de Soportech ICT</a></main></body></html>
